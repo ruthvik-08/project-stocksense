@@ -1,55 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Root App Menu Item -->
-    <menuitem id="menu_stocksense_root" 
-              name="StockSense" 
-              sequence="1"/>
+    <!-- Root App Menu -->
+    <menuitem id="menu_stocksense_root" name="StockSense" sequence="1"/>
 
     <!-- Top Level Menus -->
-    <menuitem id="menu_stocksense_dashboard" 
-              name="Dashboard" 
-              parent="menu_stocksense_root" 
-              sequence="10"/>
-              
-    <menuitem id="menu_stocksense_products_main" 
-              name="Products" 
-              parent="menu_stocksense_root" 
-              sequence="20"/>
-              
-    <menuitem id="menu_stocksense_operations_main" 
-              name="Operations" 
-              parent="menu_stocksense_root" 
-              sequence="30"/>
+    <menuitem id="menu_stocksense_dashboard" name="Dashboard" parent="menu_stocksense_root" sequence="10"/>
+    <menuitem id="menu_stocksense_products_main" name="Products" parent="menu_stocksense_root" sequence="20"/>
+    <menuitem id="menu_stocksense_operations_main" name="Operations" parent="menu_stocksense_root" sequence="30"/>
 
-    <!-- 1. Dashboard Sub-menus (KPIs) -->
-    <menuitem id="menu_dashboard_total_products" 
-              name="Total Products in Stock" 
-              parent="menu_stocksense_dashboard" 
-              action="action_stocksense_all_products" 
-              sequence="10"/>
-              
-    <menuitem id="menu_dashboard_low_stock" 
-              name="Low Stock Alerts" 
-              parent="menu_stocksense_dashboard" 
-              action="action_stocksense_low_stock" 
-              sequence="20"/>
+    <!-- Dashboard Sub-menus -->
+    <menuitem id="menu_dashboard_total_products" name="Total Products in Stock" parent="menu_stocksense_dashboard" action="action_stocksense_all_products" sequence="10"/>
+    <menuitem id="menu_dashboard_low_stock" name="Low Stock Alerts" parent="menu_stocksense_dashboard" action="action_stocksense_low_stock" sequence="20"/>
 
-    <!-- 2. Products Navigation (Create products, Categories, Reordering) -->
-    <menuitem id="menu_products_list" 
-              name="Products" 
-              parent="menu_stocksense_products_main" 
-              action="stock.stock_product_normal_action" 
-              sequence="10"/>
-              
-    <menuitem id="menu_product_categories" 
-              name="Product Categories" 
-              parent="menu_stocksense_products_main" 
-              action="product.product_category_action_form" 
-              sequence="20"/>
-              
-    <menuitem id="menu_product_reordering" 
-              name="Reordering Rules" 
-              parent="menu_stocksense_products_main" 
-              action="stock.action_orderpoint" 
-              sequence="30"/>
+    <!-- Products Sub-menus -->
+    <menuitem id="menu_products_list" name="1. Products" parent="menu_stocksense_products_main" action="stock.stock_product_normal_action" sequence="10"/>
+    <menuitem id="menu_product_categories" name="2. Product Categories" parent="menu_stocksense_products_main" action="product.product_category_action_form" sequence="20"/>
+    <menuitem id="menu_product_reordering" name="3. Reordering Rules" parent="menu_stocksense_products_main" action="stock.action_orderpoint" sequence="30"/>
+
+    <!-- Operations Sub-menus -->
+    <menuitem id="menu_operations_receipts" name="1. Receipts (Incoming Stock)" parent="menu_stocksense_operations_main" action="action_stocksense_receipts" sequence="10"/>
+    <menuitem id="menu_operations_deliveries" name="2. Delivery Orders (Outgoing Stock)" parent="menu_stocksense_operations_main" action="action_stocksense_deliveries" sequence="20"/>
+    <menuitem id="menu_operations_transfers" name="3. Internal Transfers" parent="menu_stocksense_operations_main" action="action_stocksense_internal_transfers" sequence="30"/>
+    <menuitem id="menu_operations_adjustments" name="4. Inventory Adjustment" parent="menu_stocksense_operations_main" action="stock.action_view_inventory_tree" sequence="40"/>
+    <menuitem id="menu_operations_history" name="5. Move History" parent="menu_stocksense_operations_main" action="stock.stock_move_action" sequence="50"/>
 </odoo>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_stocksense_receipts" model="ir.actions.act_window">
+        <field name="name">Receipts (Incoming Stock)</field>
+        <field name="res_model">stock.picking</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="domain">[('picking_type_code', '=', 'incoming')]</field>
+        <field name="context">{'search_default_draft': 1, 'search_default_assigned': 1}</field>
+    </record>
+
+    <record id="action_stocksense_deliveries" model="ir.actions.act_window">
+        <field name="name">Delivery Orders (Outgoing Stock)</field>
+        <field name="res_model">stock.picking</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="domain">[('picking_type_code', '=', 'outgoing')]</field>
+        <field name="context">{'search_default_draft': 1, 'search_default_assigned': 1}</field>
+    </record>
+
+    <record id="action_stocksense_internal_transfers" model="ir.actions.act_window">
+        <field name="name">Internal Transfers</field>
+        <field name="res_model">stock.picking</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="domain">[('picking_type_code', '=', 'internal')]</field>
+    </record>
+</odoo>
