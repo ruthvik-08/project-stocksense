@@ -1,0 +1,69 @@
+/* =========================================
+   STOCKSENSE: THE PREMIUM BUILD
+   ========================================= */
+
+/* 1. THE NUCLEAR NAVBAR OVERRIDE */
+/* This targets the navbar and absolutely everything inside it */
+.o_navbar, 
+.o_main_navbar,
+.o_navbar *, 
+.o_main_navbar * {
+    background-color: #0058A3 !important;
+    background-image: none !important;
+    color: #FFFFFF !important;
+    border: none !important;
+}
+
+/* Re-apply the yellow accent at the bottom of the main bar */
+.o_navbar, .o_main_navbar {
+    border-bottom: 4px solid #FBD914 !important;
+}
+
+/* 2. PROTECT DROPDOWN MENUS (So you can still read them) */
+.o_navbar .dropdown-menu,
+.o_navbar .dropdown-menu *,
+.o_main_navbar .dropdown-menu,
+.o_main_navbar .dropdown-menu * {
+    background-color: #FFFFFF !important;
+    color: #111111 !important;
+}
+
+/* Dropdown hover state */
+.o_navbar .dropdown-menu a:hover,
+.o_main_navbar .dropdown-menu a:hover {
+    background-color: #F5F5F5 !important;
+}
+
+/* 3. CLEAN BACKGROUND & FONTS */
+body.o_web_client {
+    background-color: #F9F9F9 !important;
+    font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+/* 4. PREMIUM KANBAN CARDS (Clean, flat, subtle shadow) */
+.o_kanban_record {
+    background-color: #FFFFFF !important;
+    border: 1px solid #E0E0E0 !important;
+    border-radius: 6px !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04) !important;
+    padding: 16px !important;
+    transition: all 0.2s ease;
+}
+.o_kanban_record:hover {
+    border-color: #0058A3 !important;
+    box-shadow: 0 4px 12px rgba(0,88,163,0.15) !important;
+}
+
+/* 5. BUTTONS */
+.btn-primary {
+    background-color: #0058A3 !important;
+    border-color: #0058A3 !important;
+    color: #FFFFFF !important;
+    border-radius: 4px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.btn-primary:hover {
+    background-color: #004b87 !important;
+}

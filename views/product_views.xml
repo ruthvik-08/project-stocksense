@@ -6,9 +6,15 @@
         <field name="inherit_id" ref="product.product_template_form_view"/>
         <field name="arch" type="xml">
             <xpath expr="//page[@name='inventory']" position="inside">
-                <group string="StockSense Alerts">
-                    <field name="low_stock_threshold"/>
-                    <field name="is_low_stock" readonly="1" widget="boolean_toggle"/>
+                <group string="StockSense Alerts &amp; Metrics">
+                    <group>
+                        <field name="low_stock_threshold"/>
+                        <field name="inventory_status" readonly="1" decoration-danger="inventory_status == 'out_of_stock'" decoration-warning="inventory_status == 'low_stock'" decoration-success="inventory_status == 'in_stock'"/>
+                    </group>
+                    <group>
+                        <field name="is_low_stock" readonly="1" widget="boolean_toggle"/>
+                        <field name="total_stock_value" readonly="1" widget="monetary"/>
+                    </group>
                 </group>
             </xpath>
         </field>
